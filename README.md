@@ -1,13 +1,5 @@
-# Sample Hardhat Project
+# Simple NFT MarketPlace
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+NFTMarket deployed to 0xCC1cC154202dc96d0D5EaD72Ee090a7eE1538502
+on Sepolia testnet
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
