@@ -3,6 +3,7 @@ pragma solidity ^0.8.24;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract NFTMarketplace is ERC721, Ownable {
@@ -62,5 +63,14 @@ contract NFTMarketplace is ERC721, Ownable {
 
     function withdraw() external onlyOwner {
         payable(owner()).transfer(address(this).balance);
+    }
+
+     function _setTokenURI(uint256 tokenId, string memory _tokenURI) private {
+        require(
+            _exists(tokenId),
+            "ERC721URIStorage: URI set of nonexistent token"
+        );
+        // _tokenURI = _tokenURI.replace("ipfs://", "");
+        // _tokenURIs[tokenId] = _tokenURI;
     }
 }
