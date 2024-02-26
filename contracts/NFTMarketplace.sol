@@ -13,14 +13,13 @@ contract NFTMarketplace is ERC721, Ownable {
     // Mapping from token ID to sale price
     mapping(uint256 => uint256) private _tokenSalePrices;
 
-    // Events
     event NFTMinted(address indexed owner, uint256 indexed tokenId, string tokenURI);
     event NFTListed(uint256 indexed tokenId, uint256 salePrice);
     event NFTSold(address indexed buyer, address indexed seller, uint256 indexed tokenId, uint256 salePrice);
 
     constructor() ERC721("NFTMarketplace", "NFTM") {}
 
-    // Mint new NFT
+
     function mintNFT(string memory tokenURI) external onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
         _safeMint(msg.sender, tokenId);
